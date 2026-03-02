@@ -72,5 +72,5 @@ This is not a production insurance platform. The focus is clarity, structure, an
 │   └── seed_bulk.py         # Bulk realistic data generator
 ├── requirements.txt
 └── README.md
-FastAPI Docs: You can view all endpoints and test the API at /docs once the server is running.
+
 
