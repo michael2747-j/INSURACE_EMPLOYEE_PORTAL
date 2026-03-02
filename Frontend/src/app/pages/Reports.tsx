@@ -222,7 +222,7 @@ export function Reports() {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="type" />
                   <YAxis tickFormatter={(value) => `$${(value / 1000000).toFixed(1)}M`} />
-                  <Tooltip formatter={(value: number) => formatCurrency(value)} />
+                  <Tooltip formatter={(value?: number) => formatCurrency(value ?? 0)} />
                   <Legend />
                   <Bar dataKey="premium" fill="#3b82f6" name="Total Premium" />
                   <Bar dataKey="policies" fill="#10b981" name="Policy Count" />
@@ -238,7 +238,7 @@ export function Reports() {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis type="number" tickFormatter={(value) => `$${(value / 1000).toFixed(0)}K`} />
                     <YAxis type="category" dataKey="province" width={50} />
-                    <Tooltip formatter={(value: number) => formatCurrency(value)} />
+                    <Tooltip formatter={(value?: number) => formatCurrency(value ?? 0)} />
                     <Bar dataKey="premium" fill="#3b82f6" />
                   </BarChart>
                 </ResponsiveContainer>
@@ -329,7 +329,7 @@ export function Reports() {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="month" />
                   <YAxis domain={[0, 100]} />
-                  <Tooltip formatter={(value: number) => `${value}%`} />
+                  <Tooltip formatter={(value?: number) => `${value}%`} />
                   <Legend />
                   <Line
                     type="monotone"
