@@ -1,58 +1,76 @@
-Insurance Employee Portal (Full-Stack)
-This is a portfolio management system built to handle real-world insurance data relationships. It uses FastAPI for the backend, Postgres for the relational data, and React/Tailwind for the frontend.
+# Insurance Portfolio Management System
 
-I designed the UI in Figma first to make sure the data flow actually made sense for an end-user before writing any CSS.
+A full-stack insurance management platform built for learning, portfolio development, and backend-focused system design.
 
-🛠 Tech Stack
-Backend: FastAPI, Psycopg (Postgres driver)
+This project demonstrates relational database modeling, API development with FastAPI, client–server communication, and real-time frontend integration using a clean and structured architecture.
 
-Database: PostgreSQL (ERD-driven schema)
+---
 
-Frontend: React (Vite), Tailwind CSS, TypeScript
+## Overview
 
-Tools: Figma, Python (for data seeding scripts)
+The Insurance Portfolio Management System simulates an internal employee portal used to manage insurance accounts, policies, and claims.
 
-🚀 What it does
-Live Dashboard: Pulls real-time stats (policies, claims, active accounts) directly from SQL.
+Users can:
 
-Relational Data: Handles complex links between Accounts -> Policies -> Coverages -> Claims.
+- View live portfolio statistics
+- Search and filter insurance accounts
+- Track policies and their statuses
+- Monitor claims with severity classification
+- Generate structured reports based on SQL queries
 
-Claims Management: Status/severity filters with detail drawers for deep record inspection.
+The frontend runs in the browser and communicates with a FastAPI backend, which connects directly to a PostgreSQL database. All displayed data is fetched live from the database — no mock data is used in the final system.
 
-Bulk Seeding: Includes scripts to generate thousands of realistic records so the app doesn't look empty.
+This repository is designed to be both:
+- a portfolio-ready full-stack project
+- a structured demonstration of database-driven system design
 
-Reporting: Custom SQL queries for generating portfolio insights.
+---
 
-🏗 Project Structure
-Plaintext
-Insurance_SQL_Portfolio/
-├── app/                # Backend logic & API routes
-├── frontend/           # React + Tailwind UI
-├── sql/                # Schema & analytical queries
-└── scripts/            # Python scripts for bulk data generation
-⚙️ Quick Start
-1. Database & Seeding
-Bash
-# Run the schema
-psql -d insurance_db -f sql/schema.sql
+## Project Goals
 
-# Populate with realistic data
-python scripts/seed_bulk.py
-2. Backend
-Bash
-cd app
-pip install -r requirements.txt
-uvicorn main:app --reload
-3. Frontend
-Bash
-cd frontend
-npm install
-npm run dev
-🔎 Why I built it this way
-Most "portfolio" apps use JSON or simple arrays. I wanted something that felt like a real production tool.
+- Demonstrate strong relational database modeling (ERD-driven)
+- Show clean backend architecture using FastAPI
+- Provide structured API endpoints with Swagger documentation
+- Implement real-time CRUD operations
+- Maintain relational integrity through foreign keys and constraints
 
-SQL Constraints: Every table has proper foreign keys and check constraints.
+This is not a production insurance platform. The focus is clarity, structure, and database-centered system design.
 
-Figma-to-Code: I used a professional design workflow to speed up UI execution.
+---
 
+## Architecture
+
+- Frontend: React (Vite), TypeScript, Tailwind CSS
+- Backend: FastAPI (Python)
+- Database: PostgreSQL
+- Design: Figma (UI planning and layout)
+
+---
+
+## Features
+
+- Account management with search and filtering
+- Policy tracking with status categorization
+- Claim monitoring with severity classification
+- Drawer-based detailed record views
+- Live API integration (no mock data)
+- Swagger UI for backend endpoint testing
+- Bulk data seeding for realistic sample data
+
+---
+
+## Project Structure
+
+```text
+├── app/                     # FastAPI backend (routes, models, db logic)
+├── Frontend/                # React frontend
+├── sql/
+│   ├── schema.sql           # Database schema definition
+│   └── reporting_queries.sql
+├── scripts/
+│   ├── seed.py              # Sample data seeding
+│   └── seed_bulk.py         # Bulk realistic data generator
+├── requirements.txt
+└── README.md
 FastAPI Docs: You can view all endpoints and test the API at /docs once the server is running.
+
